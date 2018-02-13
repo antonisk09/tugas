@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Biodata Diri</title>
+</head>
+<body>
+    <h1>Biodata </h1>
+
+    
+<fieldset>
+<fieldset>
+    <legend> Personal Data</legend>
+<p>Nama lengkap :   <input type="text" id="nama"> </p>
+<p>Tempat lahir :   <input type="text" id = "tempat"> Tanggal Lahir <input type ="date" id="tanggal"></p>
+<p>Gender       :   <input type="radio" value="pria" name = "kelamin" id="gender"> Pria  <input type="radio" nama="kelamin" id="gender" value="wanita"> Wanita</p>
+<p>Nomor HP     :   <input type="number" id="HP"></p>
+<p>Email        :   <input type="text" id="email"></p>
+
+    </fieldset>
+
+    <fieldset>
+    <legend> Riwayat Pendidikan</legend>
+    <table id="sekolah" border="1">
+        <tr>
+            <th> </th>
+            <th> Instansi</th>
+            <th> Tahun lulus</th>
+        </tr>
+
+        <tr id="SD">
+            <td>SD</td>
+            <td><input type="text"></td>
+            <td><input type="number"></td>
+            <td><input type="checkbox"> check bila tidak ada</td>
+        </tr>
+        <tr id="SMP">
+                <td>SMP</td>
+                <td><input type="text"></td>
+                <td><input type="number"></td>
+                <td><input type="checkbox"> check bila tidak ada</td>
+            </tr>
+        <tr id="SMA">
+                    <td>SMA</td>
+                    <td><input type="text"></td>
+                    <td><input type="number"></td>
+                    <td><input type="checkbox"> check bila tidak ada</td>
+            </tr>
+        <tr id="Kuliah">
+                    <td>Kuiah</td>
+                    <td><input type="text"></td>
+                    <td><input type="number"></td>
+                    <td><input type="checkbox"> check bila tidak ada</td>
+            </tr>
+    </table>
+
+
+</fieldset>
+<br>
+
+    <fieldset>
+        <legend> Riwayat pekerjaan </legend>
+        
+        <label for="Nama Perusahaan"> Nama perusahaan : </label>
+        <input type="text" name="perusahaan">
+    
+    <p>
+        <label for="Lama Bekerja"> Lama Bekerja :</label> 
+        <input type="text" name ="bekerja"> 
+    
+    <p>
+        <label for="Pekerjaan"> Posisi  : </label>
+        <input type="text" name="posisi">
+        
+
+
+</fieldset>   
+<button id =jalan onclick="submit()"> submit </button>
+<p id="hasil">hasil</p>
+</fieldset>
+</body>
+<script>
+    function submit()
+    {
+        let nama = document.getElementById("nama").value;
+        let tempat = document.getElementById("tempat").value;
+        let tanggal = document.getElementById("tanggal").value;
+        let gender = document.getElementById("gender").value;
+        let HP = document.getElementById("HP").value;
+        let email =document.getElementById("email").value;
+        let sma = document.getElementById("Sekolah").value;
+        let pekerjaan = document.getElementById("pekerjaan").value;
+
+        document.getElementById("hasil").innerHTML = "Nama : " + nama +  '\n' 
+        + "Tempat lahir : "+ tempat + '\n'
+        +' Tanggal Lahir : ' + tanggal + '\n'
+        + ' Gender : ' + gender + '\n'
+        + ' HP : '+ HP + ' \n'
+        + ' Email : '+ email 
+        + ' Sekolah : '+ sma
+        + ' Pekerjaan : '
+        
+        
+
+    }
+</script>
+</html>

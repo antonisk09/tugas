@@ -15,7 +15,7 @@
     <legend> Personal Data</legend>
 <p>Nama lengkap :   <input type="text" id="nama"> </p>
 <p>Tempat lahir :   <input type="text" id = "tempat"> Tanggal Lahir <input type ="date" id="tanggal"></p>
-<p>Gender       :   <input type="radio" value="pria" name = "kelamin" id="gender"> Pria  <input type="radio" nama="kelamin" id="gender" value="wanita"> Wanita</p>
+<p>Gender       :   <input type="radio" value="pria" name = "sex" id="pria"> Pria  <input type="radio" nama="kelamin" id="wanita" value="wanita"> Wanita</p>
 <p>Nomor HP     :   <input type="number" id="HP"></p>
 <p>Email        :   <input type="text" id="email"></p>
 
@@ -30,29 +30,29 @@
             <th> Tahun lulus</th>
         </tr>
 
-        <tr id="SD">
+        <tr>
             <td>SD</td>
-            <td><input type="text"></td>
-            <td><input type="number"></td>
-            <td><input type="checkbox"> check bila tidak ada</td>
+            <td><input type="text" id ="SD"></td>
+            <td><input type="date" id="tglsd"></td>
+            <td><input type="checkbox" id="sdcheckbox" value=""> check bila tidak ada</td>
         </tr>
-        <tr id="SMP">
+        <tr>
                 <td>SMP</td>
-                <td><input type="text"></td>
-                <td><input type="number"></td>
-                <td><input type="checkbox"> check bila tidak ada</td>
+                <td><input type="text" id="smp"></td>
+                <td><input type="date" id="tglsmp"></td>
+                <td><input type="checkbox" id="smpchecbox" value=""> check bila tidak ada</td>
             </tr>
-        <tr id="SMA">
+        <tr>
                     <td>SMA</td>
-                    <td><input type="text"></td>
-                    <td><input type="number"></td>
-                    <td><input type="checkbox"> check bila tidak ada</td>
+                    <td><input type="text" id="sma"></td>
+                    <td><input type="date" id="tglsma"></td>
+                    <td><input type="checkbox" id="smacheckbox"> check bila tidak ada</td>
             </tr>
-        <tr id="Kuliah">
+        <tr>
                     <td>Kuiah</td>
-                    <td><input type="text"></td>
-                    <td><input type="number"></td>
-                    <td><input type="checkbox"> check bila tidak ada</td>
+                    <td><input type="text" id="kuliah"></td>
+                    <td><input type="date" id="tglkuliah"></td>
+                    <td><input type="checkbox" id="kuliahcheckbox"> check bila tidak ada</td>
             </tr>
     </table>
 
@@ -64,15 +64,15 @@
         <legend> Riwayat pekerjaan </legend>
         
         <label for="Nama Perusahaan"> Nama perusahaan : </label>
-        <input type="text" name="perusahaan">
+        <input type="text" id="perusahaan">
     
     <p>
         <label for="Lama Bekerja"> Lama Bekerja :</label> 
-        <input type="text" name ="bekerja"> 
+        <input type="text" id ="bekerja"> 
     
     <p>
         <label for="Pekerjaan"> Posisi  : </label>
-        <input type="text" name="posisi">
+        <input type="text" id="posisi">
         
 
 
@@ -87,23 +87,79 @@
         let nama = document.getElementById("nama").value;
         let tempat = document.getElementById("tempat").value;
         let tanggal = document.getElementById("tanggal").value;
-        let gender = document.getElementById("gender").value;
+        let pria = document.getElementById("pria").value;
+        let wanita = document.getElementById("wanita").value;
         let HP = document.getElementById("HP").value;
         let email =document.getElementById("email").value;
-        let sma = document.getElementById("Sekolah").value;
-        let pekerjaan = document.getElementById("pekerjaan").value;
+        let sd =document.getElementById("SD").value;
+        let tglsd= document.getElementById("tglsd").value;
+        let smp =document.getElementById("smp").value;
+        let tglsmp =document.getElementById("tglsmp").value;
+        let sma = document.getElementById("sma").value;
+        let tglsma =document.getElementById("tglsma").value;
+        let kuliah = document.getElementById("kuliah").value;
+        let tglkuliah = document.getElementById("tglkuliah").value;
+        let perusahaan = document.getElementById("perusahaan").value;
+        let tglperusahaan = document.getElementById("bekerja").value;
+        let posisi =document.getElementById("posisi").value;
 
-        document.getElementById("hasil").innerHTML = "Nama : " + nama +  '\n' 
-        + "Tempat lahir : "+ tempat + '\n'
-        +' Tanggal Lahir : ' + tanggal + '\n'
-        + ' Gender : ' + gender + '\n'
-        + ' HP : '+ HP + ' \n'
-        + ' Email : '+ email 
-        + ' Sekolah : '+ sma
-        + ' Pekerjaan : '
-        
-        
-
-    }
+        document.getElementById("hasil").innerHTML = '<table>'+'<tr style=background:gray>'+
+        "<td>Personal Data</td>"+
+        '<tr>'+ "<td>Nama</td>"+'<td>:'+nama+'</td>'+
+        '</tr>'+
+        '<tr>'+
+            '<td>Tempat/Tanggal lahir </td>'+
+            '<td>: ' + tempat +', '+ tanggal + '<td>'+
+        '</tr>'+
+        '<tr>' +
+            '<td>Gender</td>'+
+            '<td>: '+gender+'</td>'+
+        '</tr>'+
+        '<tr>' +
+            '<td>Nomer Handphone</td>'+
+            '<td>: '+HP+'</td>'+
+        '</tr>'+
+        '<tr>' +
+            '<td>Email</td>'+
+            '<td>: '+email+'</td>'+
+        '</tr>'+
+        '<tr style background:gray>' +
+            "<td>Riwwayat Pendidikan</td>"+
+            '<tr>'+
+        '<td>Tamat SD</td>'+
+                '<td>: '+sd + ' </td>'+
+                '<td>Pada Tahun</td>'+
+                '<td>: '+tglsd+'</td>'+
+        '</tr>'+
+        '<tr>'+
+            '<td>Tamat SMP</td>'+
+            '<td>: '+smp + ' </td>'+
+                '<td>Pada Tahun</td>'+
+                '<td>: '+tglsmp+'</td>'+
+        '</tr>'+
+        '<tr>'+
+            '<td>Tamat SMA</td>'+
+            '<td>: '+sma + ' </td>'+
+                '<td>Pada Tahun</td>'+
+                '<td>: '+tglsma+'</td>'+
+        '</tr>'+
+        '<tr>'+
+            '<td>Tamat kuliah</td>'+
+            '<td>: '+kuliah + ' </td>'+
+                '<td>Pada Tahun</td>'+
+                '<td>: '+tglkuliah+'</td>'+
+        '</tr>'+
+        '<tr style background:gray>' +
+            "<td>Riwayat Pekerjaan</td>"+
+            '<tr>'+
+            '<tr>'+
+            '<td> Pengalaman Kerja</td>'+
+            '<td>: '+perusahaan + ' </td>'+
+            '<td> Posisi Sebagai </td>'+
+            '<td>: '+posisi +'</td>'
+                '<td>Pada Tahun</td>'+
+                '<td>: '+tglperusahaan+'</td>'+
+            '</tr>'+
+        '</table>'; }
 </script>
 </html>
